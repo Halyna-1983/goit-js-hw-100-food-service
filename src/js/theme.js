@@ -27,13 +27,20 @@ const Theme = {
     bodyRef.classList.remove(Theme.DARK)
     changeRef.checked = false
   }
-  function changeTheme() {
-    if (changeRef.checked) {
-      applyDark()
-      localStorage.setItem('theme', 'dark')
+  // function changeTheme() {
+  //   if (changeRef.checked) {
+  //     applyDark()
+  //     localStorage.setItem('theme', 'dark')
+  //   }
+  //   else {
+  //     applyLight()
+  //     localStorage.setItem('theme', 'light')
+  //   }
+  // }
+
+  function changeTheme(applyDark, applyLight, isChecked) {
+    bodyRef.classList.add(Theme.LIGHT);
+    bodyRef.classList.remove(Theme.DARK);
+    changeRef.checked = isChecked;
     }
-    else {
-      applyLight()
-      localStorage.setItem('theme', 'light')
-    }
-  }
+  
